@@ -1,0 +1,312 @@
+<<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard | Cybersecurity Scanner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛡️ PhishGuard
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO SECTION
+             ========================= -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    🛡️ Cybersecurity Protection
+                </span>
+
+                <h1>
+                    Check Before<br>
+                    <span>You Click.</span>
+                </h1>
+
+                <p>
+                    PhishGuard analyzes suspicious URLs and QR codes
+                    to help you identify potential phishing and
+                    malicious links.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 SECURITY SCANNER
+                 ========================= -->
+
+            <div class="scanner-card">
+
+                <div>
+
+                    <h2>
+                        🔍 Security Scanner
+                    </h2>
+
+                    <p class="scanner-description">
+                        Enter a website URL to perform a security
+                        risk assessment.
+                    </p>
+
+                    <div class="url-input-group">
+
+                        <input
+                            type="text"
+                            id="urlInput"
+                            placeholder="https://example.com"
+                        >
+
+                        <button onclick="checkURL()">
+                            Scan URL
+                        </button>
+
+                    </div>
+
+
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+
+
+                    <!-- QR SECTION -->
+
+                    <div class="qr-upload">
+
+                        <span class="qr-icon">
+                            📷
+                        </span>
+
+                        <strong>
+                            Scan a QR Code
+                        </strong>
+
+                        <small>
+                            Use your camera to scan a QR code
+                        </small>
+
+                        <div id="qr-reader"></div>
+
+                        <button onclick="startQRScanner()">
+                            📷 Start QR Scanner
+                        </button>
+
+                        <p id="qrResult">
+                            QR scanner is ready.
+                        </p>
+
+                        <label
+                            for="qrFile"
+                            class="upload-btn"
+                        >
+                            🖼️ Upload QR Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="qrFile"
+                            accept="image/*"
+                            onchange="scanQR()"
+                            hidden
+                        >
+
+                    </div>
+
+
+                    <!-- RESULT -->
+
+                    <div id="result" class="result">
+
+                        <div class="result-icon">
+                            🛡️
+                        </div>
+
+                        <p>
+                            Your security analysis will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HOW PHISHGUARD HELPS
+             ========================= -->
+
+        <section
+            class="security-info"
+            id="how-it-works"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-badge">
+                    🛡️ PHISHGUARD SECURITY
+                </span>
+
+                <h2>
+                    How PhishGuard Helps
+                </h2>
+
+                <p>
+                    Multiple security checks help identify
+                    potentially suspicious links before you
+                    open them.
+                </p>
+
+            </div>
+
+
+            <div class="security-grid">
+
+
+                <!-- BOX 1 -->
+
+                <div class="security-box">
+
+                    <div class="security-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        URL Analysis
+                    </h3>
+
+                    <p>
+                        Analyze URL structure and identify
+                        suspicious patterns.
+                    </p>
+
+                </div>
+
+
+                <!-- BOX 2 -->
+
+                <div class="security-box">
+
+                    <div class="security-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Risk Detection
+                    </h3>
+
+                    <p>
+                        Calculate a simple risk score using
+                        multiple security indicators.
+                    </p>
+
+                </div>
+
+
+                <!-- BOX 3 -->
+
+                <div class="security-box">
+
+                    <div class="security-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        QR Protection
+                    </h3>
+
+                    <p>
+                        Scan QR codes and check the destination
+                        before visiting the website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
+
+        <section
+            class="about"
+            id="about"
+        >
+
+            <h2>
+                About PhishGuard
+            </h2>
+
+            <p>
+                PhishGuard is a cybersecurity awareness project
+                designed to help users evaluate suspicious URLs
+                and QR codes before interacting with them.
+            </p>
+
+            <p class="notice">
+                ⚠️ Risk results are assessments and should not
+                be considered a guarantee that a website is safe
+                or malicious.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 PhishGuard. Built for cybersecurity awareness.
+        </p>
+
+    </footer>
+
+
+    <!-- QR SCANNER LIBRARY -->
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <!-- YOUR JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
